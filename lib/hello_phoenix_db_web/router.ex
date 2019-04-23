@@ -21,6 +21,10 @@ defmodule HelloPhoenixDbWeb.Router do
     get "/hello/:messenger", HelloController, :show
   end
 
+  resources "/users", UserController do
+    resources "/posts", PostController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", HelloPhoenixDbWeb do
   #   pipe_through :api
